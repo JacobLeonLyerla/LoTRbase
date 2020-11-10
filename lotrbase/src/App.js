@@ -1,7 +1,8 @@
-import {useEffect,useState,setState} from "React"
+import {useEffect,useState,} from "React"
 import './App.css';
 import axios from "axios"
 function App() {
+  const[books,setBooks] = useState([])
   const lordAPI =()=>{
   axios
   .get(`https://the-one-api.dev/v2/book?api_key${
@@ -14,6 +15,11 @@ function App() {
   })
   .catch(err => console.log(err));
   }
+  useEffect(() => {
+   const api = lordAPI()
+   setBooks(api)
+    
+  });
   return (
     <div className="App">
       a
