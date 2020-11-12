@@ -12,22 +12,22 @@ function App() {
     axios
       .get("https://the-one-api.dev/v2/./movie", config)
       .then((response) => {
-        setBooks(response.data)
+        setBooks(response.data.docs)
         return
       })
       .catch((err) => console.log(err));
   };
   useEffect(() => {
-    
-    if(books === [] || !books){
+    if(books.length === 0){
       console.log("api called")
        lordAPI();
     }
-    
     return
   });
   console.log(books);
-  return <div className="App">a</div>;
+  return <div className="App">
+    a
+  </div>;
 }
 
 export default App;
