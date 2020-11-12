@@ -26,7 +26,11 @@ function App() {
   });
   console.log(books);
   return <div className="App">
-    a
+    {books.map(book => {
+     return  <div>{book.name}</div>
+    }
+  
+  )}
   </div>;
 }
 
