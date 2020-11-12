@@ -12,13 +12,19 @@ function App() {
     axios
       .get("https://the-one-api.dev/v2/./movie", config)
       .then((response) => {
-        console.log(response, "here");
+        setBooks(response.data)
+        return
       })
       .catch((err) => console.log(err));
   };
   useEffect(() => {
-    const api = lordAPI();
-    setBooks(api);
+    
+    if(books === [] || !books){
+      console.log("api called")
+       lordAPI();
+    }
+    
+    return
   });
   console.log(books);
   return <div className="App">a</div>;
