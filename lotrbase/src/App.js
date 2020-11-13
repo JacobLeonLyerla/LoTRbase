@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+
+import LOTRCard from "./components/lotrCard"
 function App() {
   const [books, setBooks] = useState([]);
   const lordAPI = () => {
@@ -24,13 +26,13 @@ function App() {
     }
     return
   });
-  console.log(books);
   return <div className="App">
     {books.map(book => {
      return  <div>{book.name}</div>
     }
   
   )}
+  <LOTRCard/>
   </div>;
 }
 
