@@ -1,10 +1,16 @@
 import { createContext } from "react";
 
-const LOTRContext = createContext({
-  color: "red",
-  testfunction: () => {
 
-  },
-});
+export interface LOTRContext{
+    data: [],
+    setCurentData:(currentData:[]) =>void;
+}
 
-export default LOTRContext;
+export const LOTRValue ={
+    data: [],
+    setCurentData: () => {}
+};
+
+
+export const LOTRContext = createContext<LOTRContext>
+(LOTRValue);
