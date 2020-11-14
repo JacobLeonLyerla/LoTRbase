@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Card, Button, CardImg, CardTitle, CardText, CardDeck,
   CardSubtitle, CardBody
 } from 'reactstrap';
+import LOTRContext from '../contexts/lotrProvider';
 
-const LOTRCard = (props) => {
+const LOTRCard = () => {
+  const {value, setValue} = useContext(LOTRContext)
   return (
     <CardDeck>
       <Card>
