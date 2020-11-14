@@ -1,5 +1,4 @@
 import { createContext } from "react";
 
-const LOTRContext = createContext(null);
+export const LOTRContext = createContext(null);
 
-export default LOTRContext;
