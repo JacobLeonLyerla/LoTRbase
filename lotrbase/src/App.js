@@ -29,7 +29,7 @@ function App() {
   });
   return <div className="App">
 
-  <LOTRContext.Provider value={books}>
+  <LOTRContext.Provider value={{books,setBooks}}>
     <LOTRCard/>
   </LOTRContext.Provider>
   
