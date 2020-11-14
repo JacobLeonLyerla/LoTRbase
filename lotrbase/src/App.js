@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 
 import LOTRCard from "./components/lotrCard"
+import {LOTRContext} from"./contexts/lotrProvider"
 function App() {
   const [books, setBooks] = useState([]);
   const lordAPI = () => {
@@ -27,12 +28,11 @@ function App() {
     return
   });
   return <div className="App">
-    {books.map(book => {
-     return  <div>{book.name}</div>
-    }
+
+  <LOTRContext.Provider value={books}>
+    <LOTRCard/>
+  </LOTRContext.Provider>
   
-  )}
-  <LOTRCard/>
   </div>;
 }
 
