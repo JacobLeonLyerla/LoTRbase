@@ -1,37 +1,20 @@
-import React, { useState } from 'react';
-import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
+import React from 'react';
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
 const Navigation = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const toggle = () => setDropdownOpen(!dropdownOpen);
 
   return (
     <div>
       <Nav pills>
         <NavItem>
-          <NavLink href="#" active>Link</NavLink>
-        </NavItem>
-        <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle nav caret>
-            Dropdown
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Header</DropdownItem>
-            <DropdownItem disabled>Action</DropdownItem>
-            <DropdownItem>Another Action</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>Another Action</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <NavItem>
-          <NavLink href="#">Link</NavLink>
+          <NavLink href="#">Movies</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Another Link</NavLink>
+          <NavLink href="#">Books</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink disabled href="#">Disabled Link</NavLink>
+          <NavLink disabled href="#">Characters</NavLink>
         </NavItem>
       </Nav>
     </div>
