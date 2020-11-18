@@ -7,14 +7,14 @@ import Nav from"./components/nav"
 import {LOTRContext} from"./contexts/lotrProvider"
 function App() {
   const [books, setBooks] = useState([]);
-  const lordAPI = () => {
+  const lordAPI = (search = "book") => {
     const config = {
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_LOTR_API_KEY}`,
       },
     };
     axios
-      .get("https://the-one-api.dev/v2/./movie", config)
+      .get(`https://the-one-api.dev/v2/./${search}`, config)
       .then((response) => {
         setBooks(response.data.docs)
         return
@@ -29,7 +29,7 @@ function App() {
     return
   });
   return <div className="App">
-    <Nav/>
+    <Nav lordAPI={lordAPI}/>
   <LOTRContext.Provider value={{books,setBooks}}>
     <LOTRCard/>
   </LOTRContext.Provider>
