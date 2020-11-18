@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 
 import LOTRCard from "./components/lotrCard"
+import Nav from"./components/nav"
 import {LOTRContext} from"./contexts/lotrProvider"
 function App() {
   const [books, setBooks] = useState([]);
@@ -28,7 +29,7 @@ function App() {
     return
   });
   return <div className="App">
-
+    <Nav/>
   <LOTRContext.Provider value={{books,setBooks}}>
     <LOTRCard/>
   </LOTRContext.Provider>
